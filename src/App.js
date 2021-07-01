@@ -1,8 +1,8 @@
 
 import React from 'react';
 import requests from './requests'
-import Row from './Row';
-import Banner from './'
+import Row from './components/Row';
+import Banner from './components/Banner'
 
 function App() {
   return (
