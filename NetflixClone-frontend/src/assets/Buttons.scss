@@ -10,3 +10,16 @@
     font-size: 1rem;
   }
 }
+
+@mixin navBtn {
+  cursor: pointer;
+  border: none;
+  width: 4.6rem;
+  height: 2rem;
+  border-radius: 5px;
+  background: rgb(255, 0, 0);
+  span {
+    color: white;
+    font-size: 0.9rem;
+  }
+}
