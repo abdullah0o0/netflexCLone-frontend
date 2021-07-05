@@ -4,13 +4,15 @@ import Row from "./components/Row";
 import Banner from "./components/Banner";
 import "./assets/App.scss";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 import Container from "./context/Container";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
+import Profile from "./components/Profile";
+
 function App() {
   return (
     <Container>
@@ -21,6 +23,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/profile" component={Profile} />
             <Route path="/movies">
               <Banner />
               <Row
@@ -52,7 +55,7 @@ function App() {
               />
             </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </div>
       </BrowserRouter>
     </Container>

@@ -2,7 +2,7 @@ const express = require("express");
 const port = 4000;
 const createError = require("http-errors");
 const cors = require("cors");
-// const { auth } = require("./middlewares/Auth");
+const { auth } = require("./middlewares/Auth");
 
 const moviesRoutes = require("./routes/movieRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -19,7 +19,7 @@ app.use(cors({ origin: "*", exposedHeaders: "x-auth" }));
 app.use(express.json());
 
 app.use("/users", userRoutes);
-app.use("/movies", moviesRoutes);
+app.use("/movies", auth, moviesRoutes);
 
 app.listen(port, () =>
   console.log(`express server is running on port: ${port}`)
