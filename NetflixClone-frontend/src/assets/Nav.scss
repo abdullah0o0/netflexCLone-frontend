@@ -1,24 +1,48 @@
-.nav{
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
-    height: 30px;
-    background-color: #111;
-    .nav_logo{
-        position: fixed;
-        left: 20px;
-        width: 80px;
-        object-fit: contain;
-        background-image: none;
+@import "Buttons";
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+  padding-top: 1.2rem;
+  height: 30px;
+  background-image: linear-gradient(rgb(0, 0, 0), #da242400);
+
+  .nav_logo {
+    margin-left: 0.4rem;
+    align-self: start;
+    width: 8rem;
+    height: 100%;
+    background-image: url("https://cloudfront-us-east-1.images.arcpublishing.com/gray/3HCWZMP7PFGY3OJJPFHIX5O2VI.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    ::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
-    .nav_avatar{
-        position: fixed;
-        right: 20px;
-        width: 30px;
-        object-fit: contain;
-    }
-    
+  }
+  .nav_avatar {
+    margin-right: 1rem;
+    width: 2rem;
+    height: 100%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.navBtnBox {
+  margin-left: auto;
+  margin-right: 1rem;
+  align-self: flex-end;
+  .navBtn {
+    @include navBtn;
+  }
 }

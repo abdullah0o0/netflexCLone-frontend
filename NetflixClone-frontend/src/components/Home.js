@@ -6,7 +6,7 @@ import MyContext from "../context/MyContext";
 
 export default function Home(props) {
   const [movie, setMovie] = useState([]);
-  const { userEmail, setUserEmail } = useContext(MyContext);
+  const { setUserEmail } = useContext(MyContext);
 
   useEffect(() => {
     async function fetchData() {
