@@ -4,6 +4,7 @@ import Row from "./components/Row";
 import Banner from "./components/Banner";
 import "./assets/App.scss";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 
 import Container from "./context/Container";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -51,6 +52,7 @@ function App() {
               />
             </Route>
           </Switch>
+          <Footer/>
         </div>
       </BrowserRouter>
     </Container>

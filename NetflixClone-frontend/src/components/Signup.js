@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import "../assets/Signup.scss";
+import MyContext from "../context/MyContext";
 
 export default function Signup(props) {
+  const { userEmail } = useContext(MyContext);
   const signupForm = (e) => {
     e.preventDefault();
 
@@ -28,28 +31,48 @@ export default function Signup(props) {
   };
   return (
     <>
-      <form onSubmit={signupForm}>
-        <label>
-          First Name:{" "}
-          <input type="text" name="firstname" placeholder="Enter First Name" />
-        </label>
-        <br />
-        <label>
-          Last Name:{" "}
-          <input type="text" name="lastname" placeholder="Enter Last Name" />
-        </label>
-        <br />
-        <label>
-          Email: <input type="email" name="email" placeholder="Enter Email" />
-        </label>
-        <br />
-        <label>
-          Password:{" "}
-          <input type="password" name="password" placeholder="Enter Password" />
-          <br />
-          <button type="submit">Signup</button>
-        </label>
-      </form>
+      <div className="page">
+        <div class="formSection">
+          <h2 className="signupHeader">Create your account!</h2>
+          <form onSubmit={signupForm} className="signupForm">
+            <input
+              className="signupInput"
+              type="text"
+              name="firstname"
+              placeholder="Enter First Name"
+              required
+            />
+
+            <input
+              type="text"
+              className="signupInput"
+              name="lastname"
+              placeholder="Enter Last Name"
+              required
+            />
+
+            <input
+              className="signupInput"
+              type="email"
+              name="email"
+              defaultValue={userEmail}
+              placeholder="Enter Email"
+              required
+            />
+
+            <input
+              className="signupInput"
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+            />
+            <button className="signupBtn" type="submit">
+              <span>Signup</span>
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   );
 }
