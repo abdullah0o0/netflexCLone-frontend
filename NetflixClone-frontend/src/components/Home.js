@@ -31,7 +31,7 @@ export default function Home(props) {
 
   return (
     <div
-      className="page"
+      className="homepage"
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
       }}
