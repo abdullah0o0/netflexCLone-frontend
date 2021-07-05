@@ -6,7 +6,11 @@
     width: 100%;
     padding: 20px;
     height: 30px;
-    background-color: #111;
+    z-index: 1;
+
+    /*nav Anmation*/
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
     .nav_logo{
         position: fixed;
         left: 20px;
@@ -21,4 +25,7 @@
         object-fit: contain;
     }
     
+}
+.nav_black{
+    background-color: #111;
 }
