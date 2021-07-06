@@ -4,7 +4,8 @@ import "../assets/footer.css"
 export default function Footer() {
   return (
     <div className="footer-div">
-      <p>Questions? Call 008007999</p>
+      <p><a href="#">Questions? Call +080007999</a></p>
+      
       <footer>
         <div className="col1">
           <a href="#">FAQ</a>
@@ -37,8 +38,10 @@ export default function Footer() {
       <select class="selectpicker" data-width="fit">
     <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
+  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Arabic</option>
 </select>
- <p>Netflix Germany</p>
+ <p className="netflix-germany">Netflix Germany</p>
+
     </div>
   )
 }
