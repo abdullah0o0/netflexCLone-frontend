@@ -4,9 +4,13 @@ import "../assets/Nav.scss";
 import MyContext from "../context/MyContext";
 
 export default function Navbar() {
-  const { isLogin, setIsLogin } = useContext(MyContext);
+  const { setIsLogin } = useContext(MyContext);
 
   const history = useHistory();
+
+  const xAuth = localStorage.getItem("x-auth");
+
+  // console.log(isLogin);
 
   const [show, handleShow] = useState(false);
   useEffect(() => {
@@ -27,7 +31,7 @@ export default function Navbar() {
         <Link to="/movies"></Link>
       </div>
       <div className="navBtnBox">
-        {isLogin ? (
+        {xAuth ? (
           <>
             <Link>
               <button
@@ -36,6 +40,7 @@ export default function Navbar() {
                   setIsLogin(false);
                   history.push("/");
                   console.log("user logged out");
+                  window.location.reload();
                 }}
                 className="navBtn"
               >
