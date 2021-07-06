@@ -20,6 +20,7 @@ export default function Login(props) {
       .then((res) => {
         let token = res.headers.get("x-auth");
         localStorage.setItem("x-auth", token);
+        window.location.replace("/movies");
         return res.json();
       })
       .then((result) => {
@@ -27,7 +28,7 @@ export default function Login(props) {
           console.log(result.data);
           setUser(result.data);
           setIsLogin(true);
-          props.history.push("/movies");
+          // props.history.push("/movies");
         } else {
           console.log(result.message);
         }
