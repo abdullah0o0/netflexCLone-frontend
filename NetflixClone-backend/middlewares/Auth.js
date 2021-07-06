@@ -8,6 +8,7 @@ exports.auth = (req, res, next) => {
   if (decodedToken) {
     next();
   } else {
+    console.log("not allowed");
     next(new Error("unauthorized user"));
   }
 };

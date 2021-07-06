@@ -2,7 +2,7 @@ const express = require("express");
 const port = 4000;
 const createError = require("http-errors");
 const cors = require("cors");
-// const { auth } = require("./middlewares/Auth");
+const { auth } = require("./middlewares/Auth");
 
 const moviesRoutes = require("./routes/movieRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -19,7 +19,7 @@ app.use(cors({ origin: "*", exposedHeaders: "x-auth" }));
 app.use(express.json());
 
 app.use("/api/v1/users", userRoutes);
-app.use("/api/v1/movies", moviesRoutes);
+app.use("/api/v1/movies", auth, moviesRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder

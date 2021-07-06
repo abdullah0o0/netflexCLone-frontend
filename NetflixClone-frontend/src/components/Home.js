@@ -20,7 +20,7 @@ export default function Home(props) {
     }
     fetchData();
   }, []);
-  // console.log(movie);
+  console.log(movie);
 
   const inputVal = useRef("");
 
@@ -67,6 +67,10 @@ export default function Home(props) {
           </button>
         </form>
       </div>
+      <h6 className="captionTitle">
+        <span style={{ color: "rgb(172, 172, 172)" }}>Movie Caption </span>
+        {movie.name}
+      </h6>
     </div>
   );
 }

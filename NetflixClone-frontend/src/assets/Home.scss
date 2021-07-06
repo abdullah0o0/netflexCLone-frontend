@@ -40,3 +40,12 @@
 .startBtn {
   @include startBtn;
 }
+
+.captionTitle {
+  color: white;
+  z-index: 10;
+  position: absolute;
+  margin: 1rem;
+  bottom: 0;
+  left: 0;
+}
