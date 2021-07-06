@@ -31,7 +31,7 @@ export default function Banner() {
                     <button className="banner_button">My List</button>
                 </div>
                 <h1 className="banner_description" >{movie?.overview}
-                {truncate(movie?.overview, 120)}</h1>
+                {truncate(movie?.overview, 150)}</h1>
                
             </div>
             <div className="banner--fadeBottom"></div>
