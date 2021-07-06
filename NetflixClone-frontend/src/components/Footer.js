@@ -33,7 +33,6 @@ export default function Footer() {
           <a href="#">Legal Notices</a>
         </div>
       </footer>
-<<<<<<< HEAD
       <select class="selectpicker" data-width="fit">
     <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
@@ -41,17 +40,6 @@ export default function Footer() {
 </select>
  <p className="netflix-germany">Netflix Germany</p>
 
-=======
-      <select className="selectpicker" data-width="fit">
-        <option data-content='<span class="flag-icon flag-icon-us"></span> English'>
-          English
-        </option>
-        <option data-content='<span class="flag-icon flag-icon-mx"></span> Español'>
-          Español
-        </option>
-      </select>
-      <p>Netflix Germany</p>
->>>>>>> 9359fb91ecccd67a6987678c24133df038ee4073
     </div>
   );
 }
