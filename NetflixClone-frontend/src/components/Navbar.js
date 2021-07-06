@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="navBtnBox">
         {xAuth ? (
           <>
-            <Link>
+            <Link to="/login">
               <button
                 onClick={() => {
                   localStorage.clear();
@@ -46,6 +46,12 @@ export default function Navbar() {
               >
                 <span>Log out</span>
               </button>
+            </Link>
+            <Link to="/profile">
+              <button className="navBtn">
+              <span>Profile</span>
+              </button>
+
             </Link>
           </>
         ) : (
