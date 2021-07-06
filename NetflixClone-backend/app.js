@@ -18,18 +18,32 @@ app.use(cors({ origin: "*", exposedHeaders: "x-auth" }));
 
 app.use(express.json());
 
-app.use("/users", userRoutes);
-app.use("/movies", moviesRoutes);
+app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/movies", moviesRoutes);
 
-app.listen(port, () =>
-  console.log(`express server is running on port: ${port}`)
-);
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("../NetflixClone-frontend/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "..", "NetflixClone-frontend", "build", "index.html"));
+  });
+}
+
+
 
 app.use((req, res, next) => {
   let err = createError(404, "pagenotfound");
   next(err);
 });
 
+
 app.use((err, req, res, next) => {
   res.status(err.status || 500).send({ success: false, message: err.message });
 });
+
+
+
+app.listen(port, () =>
+  console.log(`express server is running on port: ${port}`)
+);
