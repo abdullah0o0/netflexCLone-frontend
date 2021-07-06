@@ -36,7 +36,7 @@ export default function Login() {
   };
   return (
     <div className="page">
-      <div class="formSection">
+      <div className="formSection">
         <h2 className="signupHeader">Log in!</h2>
         <form onSubmit={loginForm} className="signupForm">
           <input
