@@ -1,5 +1,5 @@
-import React from 'react'
-import "../assets/footer.css"
+import React from "react";
+import "../assets/footer.css";
 
 export default function Footer() {
   return (
@@ -13,27 +13,25 @@ export default function Footer() {
           <a href="#">Ways to Watch</a>
           <a href="#">Impressum</a>
           <a href="#">Only on Netflix</a>
-
         </div>
         <div className="col2">
-        <a href="#">Help Center</a>
-        <a href="#">Jobs</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Contact Us</a>
+          <a href="#">Help Center</a>
+          <a href="#">Jobs</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact Us</a>
         </div>
         <div className="col3">
-        <a href="#">Account</a>
-        <a href="#">Redeem Gift Cards</a>
-        <a href="#">Privacy</a>
-        <a href="#">Speed Test</a>
+          <a href="#">Account</a>
+          <a href="#">Redeem Gift Cards</a>
+          <a href="#">Privacy</a>
+          <a href="#">Speed Test</a>
         </div>
         <div className="col4">
-        <a href="#">Media Center</a>
-        <a href="#">Buy Gift Cards</a>
-        <a href="#">Cookie Preferences</a>
-        <a href="#">Legal Notices</a>
+          <a href="#">Media Center</a>
+          <a href="#">Buy Gift Cards</a>
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Legal Notices</a>
         </div>
-
       </footer>
       <select class="selectpicker" data-width="fit">
     <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
@@ -43,5 +41,5 @@ export default function Footer() {
  <p className="netflix-germany">Netflix Germany</p>
 
     </div>
-  )
+  );
 }
