@@ -30,10 +30,11 @@ export default function Row({title, fetchUrl, isLargeRow}) {
     }
 
     const handleClick = (movie) =>{
+        console.log(movies)
         if(trailerUrl){
             setTrailerUrl('');
         }else{
-            movieTrailer(movie?.original_title|| "")
+            movieTrailer(movie?.original_title || movie?.original_name || "")
             /*movieTrailer( null, { tmdbId: 161 } )*/
             .then ((url) =>{
                 // https:// www.youtube.com/watch?v=(the video)

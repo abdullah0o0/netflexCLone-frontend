@@ -32,7 +32,7 @@ export default function Signup(props) {
   return (
     <>
       <div className="page">
-        <div class="formSection">
+        <div className="formSection">
           <h2 className="signupHeader">Create your account!</h2>
           <form onSubmit={signupForm} className="signupForm">
             <input
