@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap'); */
 .footer-div{
   display: flex;
   flex-direction: column;
-   align-items: flex-start;
-  justify-content: center; 
+  align-items: flex-start;
+  justify-content: center;
   color: white;
-  font-family: Domine;
+  /* font-family: Domine; */
  
 }
+
 footer {
   background-color: black;
   height: 400px;
@@ -15,28 +16,28 @@ footer {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  font-family: Domine;
+  /* font-family: Domine; */
   padding: 20px;
  
 }
-a{
+a {
   color: white;
   text-decoration: none;
   padding: 10px;
 }
-.col1{
+.col1 {
   display: flex;
   flex-direction: column;
 }
-.col2{
+.col2 {
   display: flex;
   flex-direction: column;
 }
-.col3{
+.col3 {
   display: flex;
   flex-direction: column;
 }
-.col4{
+.col4 {
   display: flex;
   flex-direction: column;
 }
