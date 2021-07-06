@@ -29,18 +29,21 @@ export default function Row({title, fetchUrl, isLargeRow}) {
         },
     }
 
-    const handleClick = (movie) =>{
+    const handleClick  = (movie) =>{
         console.log(movies)
         if(trailerUrl){
-            setTrailerUrl('');
+            setTrailerUrl("");
         }else{
-            movieTrailer(movie?.original_title || movie?.original_name || "")
+            movieTrailer(movie?.name || movie?.original_title || "" )
+            //console.log("we are line two");
             /*movieTrailer( null, { tmdbId: 161 } )*/
             .then ((url) =>{
                 // https:// www.youtube.com/watch?v=(the video)
-                const urlParams = new URLSearchParams (new URL (url).search);
-               setTrailerUrl (urlParams.get("v"));
-            }).catch(error => console.log(error))
+                const urlParams = new URLSearchParams (new URL(url).search);
+                //console.log("url", url)
+                setTrailerUrl(urlParams.get("v"));
+            })
+            .catch(error => console.log(error))
         }
     }
     return (
@@ -49,10 +52,10 @@ export default function Row({title, fetchUrl, isLargeRow}) {
             <div className="row_posters" >
                 {movies.map(movie =>(
                     <img
-                    onClick={() => handleClick(movie)}
                     key={movie.id}
+                    onClick={() => handleClick(movie)}
                     className={`row_poster ${isLargeRow && "row_posterLarge"} `}
-                     src={`${base_url}/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name} />
+                     src={`${base_url}/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name || movie.original_title} />
                 ))}
 
             </div>
