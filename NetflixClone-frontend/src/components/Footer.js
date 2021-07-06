@@ -1,11 +1,24 @@
 import React from "react";
-import "../assets/footer.css";
+import "../assets/Footer.scss";
+import {FaFacebook,FaInstagram,FaTwitter,FaYoutube} from 'react-icons/fa'
+import { IconContext } from "react-icons";
 
 export default function Footer() {
   return (
+    
     <div className="footer-div">
-      <p><a href="/#">Questions? Call +080007999</a></p>
-      
+      <IconContext.Provider value=
+      {{className: "mediaStyles" }}>
+       <div className="socialMedia">
+         
+         <a href="https://www.facebook.com/NetflixDACH"  aria-label="facebook"><FaFacebook /></a>
+         <a href="https://www.instagram.com/NetflixDE"  aria-label="instagram"><FaInstagram /></a>
+         <a href="https://twitter.com/NetflixDE"  aria-label="twitter"><FaTwitter /></a>
+         <a href="https://www.youtube.com/user/netflixdach"  aria-label="youtube"><FaYoutube /></a>
+       
+       </div>
+      </IconContext.Provider>
+
       <footer>
         <div className="col1">
           <a href="/#">FAQ</a>
@@ -32,14 +45,9 @@ export default function Footer() {
           <a href="/#">Cookie Preferences</a>
           <a href="/#">Legal Notices</a>
         </div>
+        
       </footer>
-      <select className="selectpicker" data-width="fit">
-    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
-  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Arabic</option>
-</select>
- <p className="netflix-germany">Netflix Germany</p>
-
+      <span>‎© 1997-2021 Netflix, Inc.‎‎</span>
     </div>
   );
 }
