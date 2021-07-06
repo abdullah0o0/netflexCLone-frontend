@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import MyContext from "../context/MyContext";
 
 export default function Login(props) {
-  const { setUser, setIsLogin } = useContext(MyContext);
+  const { setUser, setIsLogin, userEmail } = useContext(MyContext);
 
   const loginForm = (e) => {
     e.preventDefault();
@@ -20,6 +20,7 @@ export default function Login(props) {
       .then((res) => {
         let token = res.headers.get("x-auth");
         localStorage.setItem("x-auth", token);
+        window.location.replace("/movies");
         return res.json();
       })
       .then((result) => {
@@ -27,26 +28,37 @@ export default function Login(props) {
           console.log(result.data);
           setUser(result.data);
           setIsLogin(true);
-          props.history.push("/movies");
+          // props.history.push("/movies");
         } else {
           console.log(result.message);
         }
       });
   };
   return (
-    <>
-      <form onSubmit={loginForm}>
-        <label>
-          Email: <input type="email" name="email" placeholder="Enter Email" />
-        </label>
-        <br />
-        <label>
-          Password:{" "}
-          <input type="password" name="password" placeholder="Enter Password" />
-          <br />
-          <button type="submit">Login</button>
-        </label>
-      </form>
-    </>
+    <div className="page">
+      <div class="formSection">
+        <h2 className="signupHeader">Log in!</h2>
+        <form onSubmit={loginForm} className="signupForm">
+          <input
+            className="signupInput"
+            defaultValue={userEmail}
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+
+          <input
+            className="signupInput"
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+          />
+
+          <button type="submit" className="signupBtn">
+            <span>Login</span>
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

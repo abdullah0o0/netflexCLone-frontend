@@ -1,14 +1,59 @@
-import React from 'react'
-import '../assets/Nav.scss'
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import "../assets/Nav.scss";
+import MyContext from "../context/MyContext";
 
 export default function Navbar() {
-    return (
-        <div className="nav" >
-            <img className="nav_logo" src="https://cloudfront-us-east-1.images.arcpublishing.com/gray/3HCWZMP7PFGY3OJJPFHIX5O2VI.png" 
-            alt="Netflix Logo" />
+  const { isLogin, setIsLogin } = useContext(MyContext);
 
-            <img className="nav_avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Logo" />
-            
-        </div>
-    )
+  const history = useHistory();
+
+  const [show, handleShow] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else {
+        handleShow(false);
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+  return (
+    <div className={`nav ${show && "nav_black"}`}>
+      <div className="nav_logo">
+        <Link to="/movies"></Link>
+      </div>
+      <div className="navBtnBox">
+        {isLogin ? (
+          <>
+            <Link>
+              <button
+                onClick={() => {
+                  localStorage.clear();
+                  setIsLogin(false);
+                  history.push("/");
+                  console.log("user logged out");
+                }}
+                className="navBtn"
+              >
+                <span>Log out</span>
+              </button>
+            </Link>
+          </>
+        ) : (
+          <Link to="/login">
+            <button className="navBtn">
+              <span>Log in</span>
+            </button>
+          </Link>
+        )}
+      </div>
+      <div className="nav_avatar">
+        <Link to="/profile"></Link>
+      </div>
+    </div>
+  );
 }

@@ -16,7 +16,6 @@ export default function Banner() {
         }
         fetchData()
     }, [])
-    console.log(movie);
 
     function truncate (str, n){
         return str?.length > n? str.substr(0, n - 1) + "..." : str;
@@ -32,7 +31,7 @@ export default function Banner() {
                     <button className="banner_button">My List</button>
                 </div>
                 <h1 className="banner_description" >{movie?.overview}
-                {truncate(movie?.overview, 100)}</h1>
+                {truncate(movie?.overview, 120)}</h1>
                
             </div>
             <div className="banner--fadeBottom"></div>
