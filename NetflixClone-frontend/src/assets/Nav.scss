@@ -44,9 +44,19 @@
  .navBtnBox {
   margin-left: auto;
   margin-right: 1rem;
-  align-self: flex-end;
+  max-width: fit-content;
+  display: flex;
+    
+
   .navBtn{
-    @include navBtn
+    @include navBtn;
+    background-color: inherit;
+    color: gray;
+    font-family: 'Domine', serif;
+        font-size: larger;
+        font-weight: 700;
+        text-shadow:2px 1px 1px rgba(62, 49, 73, 0.815);
+        
   }
 
 }
