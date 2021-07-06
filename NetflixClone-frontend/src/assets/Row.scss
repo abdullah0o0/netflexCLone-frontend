@@ -1,6 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600&display=swap');
 .row{
     margin-left: 20px;
     color: white;
+    .row_title{
+        padding-top: 1.5rem;
+        font-family: 'Domine', serif;
+        font-size: larger;
+        text-shadow:2px 1px 1px rgba(137, 15, 185, 0.815);
+    }
     .row_posters{
         display: flex;
         overflow-y: hidden;
