@@ -11,7 +11,6 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/profile" component={Profile} />
             {localStorage.getItem("x-auth") ? (
               <Route path="/movies">
                 <Banner />

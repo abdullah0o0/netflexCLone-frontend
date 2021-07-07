@@ -47,12 +47,6 @@ export default function Navbar() {
                 <span>Log out</span>
               </button>
             </Link>
-            <Link to="/profile">
-              <button className="navBtn">
-              <span>Profile</span>
-              </button>
-
-            </Link>
           </>
         ) : (
           <Link to="/login">
