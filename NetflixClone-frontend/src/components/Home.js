@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import axios from "../axios";
 import requests from "../requests";
 import "../assets/Home.scss";
-import MyContext from "../MyContext";
+import MyContext from "../context/MyContext";
 
 export default function Home(props) {
   const [movie, setMovie] = useState([]);

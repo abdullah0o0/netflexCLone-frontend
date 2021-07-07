@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../assets/Signup.scss";
-import MyContext from "../MyContext";
+import MyContext from "../context/MyContext";
 
 export default function Signup(props) {
   const { userEmail } = useContext(MyContext);

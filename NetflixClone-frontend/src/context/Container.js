@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MyContext from "../MyContext";
+import MyContext from "./MyContext";
 
 export default function Container(props) {
   const [user, setUser] = useState("empty");

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import MyContext from "../MyContext";
+import MyContext from "../context/MyContext";
 
 export default function Login() {
   const { user, setUser, setIsLogin, userEmail } = useContext(MyContext);

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../assets/Nav.scss";
-import MyContext from "../MyContext";
+import MyContext from "../context/MyContext";
 
 export default function Navbar() {
   const { setIsLogin } = useContext(MyContext);
