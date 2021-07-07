@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import MyContext from "../context/MyContext";
+import MyContext from "../MyContext";
 import "../assets/Profile.scss";
 
 export default function Profile() {

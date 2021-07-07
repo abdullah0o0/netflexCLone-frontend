@@ -6,7 +6,7 @@ import movieTrailer from 'movie-trailer'
 
 
 
-const base_url = "https://image.tmdb.org/t/p/w500"
+const base_images_url = "https://image.tmdb.org/t/p/w500"
 
 export default function Row({title, fetchUrl, isLargeRow}) {
     const [movies,setMovies]=useState([])
@@ -40,7 +40,8 @@ export default function Row({title, fetchUrl, isLargeRow}) {
             .then ((url) =>{
                 // https:// www.youtube.com/watch?v=(the video)
                 const urlParams = new URLSearchParams (new URL(url).search);
-                //console.log("url", url)
+                console.log("url", url)
+                console.log(urlParams)
                 setTrailerUrl(urlParams.get("v"));
             })
             .catch(error => console.log(error))
@@ -55,7 +56,7 @@ export default function Row({title, fetchUrl, isLargeRow}) {
                     key={movie.id}
                     onClick={() => handleClick(movie)}
                     className={`row_poster ${isLargeRow && "row_posterLarge"} `}
-                     src={`${base_url}/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name || movie.original_title} />
+                     src={`${base_images_url}/${isLargeRow ? movie.poster_path : movie.backdrop_path}`} alt={movie.name || movie.original_title} />
                 ))}
 
             </div>
