@@ -2,13 +2,15 @@ const express = require("express");
 const port = 4000;
 const createError = require("http-errors");
 const cors = require("cors");
-const { auth } = require("./middlewares/Auth");
+const { auth } = require("./middlewares/Auth")
+require('dotenv').config()
 
 const moviesRoutes = require("./routes/movieRoutes");
 const userRoutes = require("./routes/userRoutes");
 
+// I Used API_KEY 
 const URL =
-  "https://api.themoviedb.org/3/movie/550?api_key=50f93e496bf76e936aa17eb412121ee7";
+  "https://api.themoviedb.org/3/movie/550?api_key={API_KEY}";
 
 require("./mongooseConnection");
 const app = express();
