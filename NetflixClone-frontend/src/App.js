@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import Container from "./context/Container";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            {localStorage.getItem("x-auth") ? (
+            
               <Route path="/movies">
                 <Banner />
                 <Row
@@ -53,9 +53,8 @@ function App() {
                   fetchUrl={requests.fetchDocumentaries}
                 />
               </Route>
-            ) : (
-              <Redirect to="/login" />
-            )}
+             
+            
           </Switch>
           <Footer />
         </div>
