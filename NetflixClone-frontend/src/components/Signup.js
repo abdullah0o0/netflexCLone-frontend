@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "../assets/Signup.scss";
 import MyContext from "../context/MyContext";
+import baseUrl from'../baseUrl'
 
 export default function Signup(props) {
   const { userEmail } = useContext(MyContext);
@@ -14,7 +15,7 @@ export default function Signup(props) {
       password: e.target.elements["password"].value,
     };
     // sending post request to express-server
-    fetch("http://localhost:4000/api/v1/users", {
+    fetch(baseUrl+"/api/v1/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import MyContext from "../context/MyContext";
+import baseUrl from'../baseUrl'
 
 export default function Login() {
   const { user, setUser, setIsLogin, userEmail } = useContext(MyContext);
@@ -12,7 +13,7 @@ export default function Login() {
     };
 
     // sending post request on /users/login
-    fetch("http://localhost:4000/api/v1/users/login", {
+    fetch(baseUrl+"/api/v1/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
