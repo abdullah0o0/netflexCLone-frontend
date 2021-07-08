@@ -1,5 +1,5 @@
 const express = require("express");
-const port = 4000;
+const port =process.env.PORT || 4000;
 const createError = require("http-errors");
 const cors = require("cors");
 const { auth } = require("./middlewares/Auth")
@@ -25,10 +25,10 @@ app.use("/api/v1/movies", auth, moviesRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static("../NetflixClone-frontend/build"));
+  app.use(express.static("NetflixClone-frontend/build"));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "NetflixClone-frontend", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname,  "NetflixClone-frontend", "build", "index.html"));
   });
 }
 
