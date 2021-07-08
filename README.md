@@ -16,7 +16,7 @@
 - react-scripts
 - web-vitals
 
-## echnologies we used in Back-End
+## Technologies we used in Back-End
 - bcrypt
 - cors
 - dotenv
